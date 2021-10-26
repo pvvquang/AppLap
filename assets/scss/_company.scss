@@ -1,0 +1,40 @@
+.company{
+    visibility: hidden;
+    &-main{
+        padding-top: 10.4rem;
+        .title{
+            font-weight: normal;
+            line-height: 2.8rem;
+            text-align: center;
+        }
+    }
+    &-list{
+        padding-top: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    display: block;
+    @include maxWidth(1023px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-list{
+            flex-wrap: wrap;
+        }
+        &-item{
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+    }
+    @include maxWidth(767px) {
+        &-main{
+            padding-top: 4rem;
+        }
+        &-item{
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.whyChoose{
+    &-main{
+        padding-top: 14rem;
+    }
+    &-content{
+        visibility: hidden;
+        text-align: center;
+        @include dFlex;
+        flex-direction: column;
+        .title{
+            max-width: 45%;
+        }
+        .desc{
+            padding-top: 3.6rem;
+            max-width: 55%;
+        }
+    }
+    &-list{
+        visibility: hidden;
+        @include dFlex;
+        flex-wrap: wrap;
+    }
+    &-item{
+        width: 33.33%;
+        @extend .features-item, .smart-item;
+        text-align: center;
+        .content .title{
+            color: $title-text;
+        }
+        &:nth-child(2) .content .title, 
+        &:nth-child(3) .content .title {
+            color: $title-text;
+        }
+        &:nth-child(1) .icon{
+            background: #ffecef;
+        }
+        &:nth-child(2) .icon{
+            color:#000;
+            background: #eaf9ff;
+        }
+        &:nth-child(3) .icon {
+            color: #000;
+            background: #fff6d3;
+        }
+        &:nth-child(4) .icon {
+            background: #e4ffee;
+        }
+        &:nth-child(5) .icon {
+            background: #f4f4ff;
+        }
+        &:nth-child(6) .icon {
+            background: #fdeee4;
+        }
+        .icon{
+            color: #000;
+            margin: 0 auto;
+        }
+        & .content .desc {
+           margin: 0 auto;
+        }
+    }
+    display: block;
+    @include maxWidth(1023px){
+        &-main{
+            padding-top: 8rem;
+        }
+        &-content{
+            .title, .desc {
+                max-width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px){
+        &-main{
+            padding-top: 4rem;
+        }
+        &-list{
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            scroll-snap-type: x mandatory;
+            justify-content: flex-start;
+            background-color: #dcdcdc;
+            margin: 1.2rem -1.5rem;
+            padding: 0 2.4rem;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        &-content{
+            .title{
+                font-size: 2.8rem;
+            }
+            .desc{
+                padding-top: 2rem;
+            }
+        }
+        &-item{
+            width: 90%;
+            flex-shrink: 0;
+            padding: 4rem 2rem;
+            scroll-snap-align: center;
+        }
+    }
+}

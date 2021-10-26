@@ -1,0 +1,146 @@
+.sales{
+    border-bottom: .2rem solid #f4f4f4 ;
+    &-main{
+        padding-top: 17.4rem;
+    }
+    &-title{
+        visibility: hidden;
+        text-align: center;
+        max-width: 72%;
+        margin: 0 auto;
+        .title{
+            padding: 0 12rem;
+            margin-bottom: 2.6rem;
+        }
+    }
+    &-nav{
+        visibility: hidden;
+        margin-top: 8rem;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .3rem;
+        border: 2px solid #ebebeb;
+        border-radius: 4rem;
+        .btn{
+            min-width: unset;
+            border-radius: 4rem;
+            padding: .2rem 3.4rem;
+        }
+        &-link{
+            padding: 1.6rem 3.2rem;
+            font-weight: 500;
+            border-radius: 4rem;
+            color: $text-color;
+            background: unset;
+            &.active{
+                background: #2500f9;
+                color: #fff;
+            }
+            &.active:hover{
+                background: transparent;
+                box-shadow: 0 0 2rem rgba(0,0,0,.3);
+                color: #2500f9;
+            }
+        }
+    }
+    &-list{
+        visibility: hidden;
+        padding-top: 4rem;
+        @include dFlex;
+        align-items: baseline;
+        margin-bottom: 10.4rem;
+    }
+    &-item{
+        border: .2rem solid transparent;
+        border-radius: .6rem;
+        overflow: hidden;
+        transition: all .3s linear;
+        box-shadow: 1rem 5rem 10rem rgba(0,0,0,.1);
+        &:hover{
+            border: .2rem solid #ebebeb;
+        }
+        &+&{
+            margin-left: 4rem;
+        }
+        &-price{
+            padding: 6rem 6rem 0;
+            background-image: linear-gradient(0, #f4f7f9, #fff);
+            .price{
+                font-size: 1.8rem;
+                margin-bottom: 2.6rem;
+                span{
+                    font-size: 6rem;
+                    font-weight: 600;
+                    color: $title-text;
+                }
+            }
+            .desc{
+                padding: 1rem 0 3.2rem;
+            }
+        }
+        &-btn{
+            .btn{
+                display: block;
+                max-width: 21rem;
+            }
+            .btn-none{
+                line-height: 1;
+                margin-top: 3rem;
+                padding: 2rem 2.2rem;
+            }
+        }
+        .sales-body{
+            padding: 0 5.2rem 2.5rem;
+            &-list{
+                padding-top: 3.8rem;
+                text-align: center;
+            }
+            &-item {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    display: block;
+    @include maxWidth(1023px){
+        border-bottom: unset;
+        &-main{
+            padding-top: 8rem;
+        }
+        &-title{
+            max-width: 100%;
+            .title{
+                padding: 0;
+            }   
+        } 
+        &-nav{
+            margin-top: 6rem;
+        }
+    }
+    @include maxWidth(676px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-list{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 4rem 1.2rem;
+            scroll-snap-type: x mandatory;
+            ::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        &-item{
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            &-price{
+                padding: 4rem 3rem 0;
+            }
+            .sales-body{
+                padding: 0 3rem 2.5rem;
+            }
+        }
+    }
+}

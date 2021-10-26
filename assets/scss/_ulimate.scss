@@ -1,0 +1,117 @@
+.ulimate{
+    margin-top: 18.5rem;
+    position: relative;
+    &-main{
+        visibility: hidden;
+        width: 66%;
+        padding-left: 5rem;
+        .btn{
+            margin-top: 5.6rem;
+        }
+    }
+    &-title{
+        max-width: 55%;
+        .title{
+            max-width: 90%;
+            margin-bottom: 2.6rem;
+        }
+    }
+    &-list{
+        @include dFlex;
+        flex-wrap: wrap;
+    }
+    &-item{
+        @extend .whyChoose-item;
+        padding-top: 5.6rem;
+        width: 50%;
+        text-align: left;
+        .icon,
+        .content .desc{
+            margin: unset;
+        }
+        
+    }
+    &-img{
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    @include maxWidth(1300px) {
+        &-img{
+            width: 40%;
+        }
+        &-title{
+            max-width: 100%;
+        }
+    }
+    @include maxWidth(1023px){
+        &{
+            margin-top: 8rem;
+        }
+        &-main{
+            padding-left: 0;
+            width: 100%;
+        }
+        &-title{
+            max-width: 100%;
+            margin-right: 40%;
+            .title{
+                max-width: 100%;
+            }
+        }
+        &-img{
+            top: 0;
+        }
+    }
+    @include maxWidth(767px){
+        &{
+            margin-top: 6rem;
+        }
+        &-main{
+            width: 100%;
+            text-align: center;
+            .btn{
+                margin-top: 2rem;
+            }
+        }
+        &-img{
+            display: none;
+        }
+        &-list{
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            justify-content: flex-start;
+            scroll-snap-type: x mandatory;
+            background: #ccc;
+            margin: 1.6rem -1.5rem;
+            padding: 0 2.4rem;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        &-item{
+            text-align: center;
+            flex-shrink: 0;
+            padding: 4rem 2rem;
+            width: 90%;
+            scroll-snap-align: center;
+            .icon{
+                margin: 0 auto;
+            }
+            .content{
+                .title{
+                    font-size: 1.8rem;
+                    padding-bottom: 1.2rem;
+                }
+            }
+        }
+        &-title{
+            margin-right: 0;
+            .title{
+            max-width: 100%;
+            padding-top: 0;
+        }
+        } 
+    }
+}

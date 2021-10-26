@@ -1,0 +1,107 @@
+.footer{
+    background: #09142e;
+    &-main{
+        padding-top: 11rem;
+        text-align: center;
+    }
+    .logo{
+        .text{
+            font-size: 3rem;
+            color: #fcae61;
+            font-weight: bold;
+            span{
+                color: #fff;
+            }
+        }
+    }
+    &-nav{
+        padding-top: 5rem;
+        li{
+            display: inline-block;
+        }
+        .nav-link{
+            padding: 2rem;
+            color: #fff;
+            border-radius: 4rem;
+            opacity: 0.78;
+            transition: box-shadow .3s;
+            &:hover{
+                opacity: 1;
+                box-shadow: 0 0 1.6rem rgba(0,0,0,.5);
+            }
+        }
+    }
+    &-social{
+        padding-top: 5rem;
+        display: flex;
+        justify-content: center;
+        &-link{
+            padding: 1rem;
+            ion-icon{
+                font-size: 4rem;
+                color: #273043;
+                transition: all .2s linear;
+            }
+            &:hover ion-icon{
+                color: #fff;
+            }
+        }
+    }
+    .desc{
+        padding: 9rem 0 13rem;
+    }
+    @include maxWidth(1200px){
+        .desc {
+            padding: 4rem 0 6rem;
+        }
+    }
+    @include maxWidth(1023px){
+        &-main{
+            padding-top: 8rem;
+        }
+        .desc{
+            padding: 4rem 0 6rem;
+        }
+    }
+    @include maxWidth(767px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-nav{
+            .nav-link{
+                font-size: 1.4rem;
+            }
+        }
+        &-social{
+            padding-top: 2rem;
+        }
+        .desc{
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+.backTop{
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc6;
+    border-radius: .6rem;
+    cursor: pointer;
+    transition: background .2s;
+    &:hover{
+        background: #ccc9;
+    }
+    ion-icon{
+        font-size: 3rem;
+        color: $text-color;
+    }
+    @include maxWidth (575px) {
+        display: none;
+    }
+}

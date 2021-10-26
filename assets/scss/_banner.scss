@@ -1,0 +1,91 @@
+.banner{
+    background: url("../image/header_bg.png") no-repeat center / cover;
+    padding-top: 5.4rem;
+    &-main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 7rem;
+    }
+    &-content {
+        visibility: hidden;
+        width: 58.33%;
+        .sub-title{
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            padding: .4rem 4.5rem .4rem 4.8rem;
+            background: #e2eaed;
+            border-radius: 3rem;
+            display: inline-block;
+            position: relative;
+            ion-icon{
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: .9rem;
+                border-radius: 3rem;
+                background: #feaa25;
+            }
+        }
+        .title{
+            font-size: 6rem;
+            line-height: 7.5rem;
+            color: $title-text;
+            padding-top: 2rem;
+        }
+        .desc{
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+            padding-top: 2rem;
+            max-width: 85%;
+        }
+    }
+    &-btn{
+        padding-top: 3.6rem;
+        .btn-none{
+            padding: 0.7rem 2.4rem;
+        }
+    }
+    &-img{
+        visibility: hidden;
+        width: 41.67%;
+        margin-bottom: 3rem;
+    }
+    display: block;
+    @include maxWidth(1023px) {
+        &-main{
+            padding-left: 0;
+        }
+        &-content{
+            width: 100%;
+            .title{
+                font-size: 4rem;
+                line-height: 1.4;
+            }
+        }
+    }
+    @include maxWidth(767px){
+        &-img{
+            display: none;
+        }
+        &-content{
+            text-align: center;
+            .title{
+                font-size: 2.8rem;
+            }
+            .desc{
+                max-width: 100%;
+            }
+            .sub-title{
+                font-size: 1.6rem;
+                padding-right: 1.2rem;
+                padding-left: 3.6rem;
+            }
+        }
+        &-btn{
+            .btn-none{
+                margin: 1.6rem 0;;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+$primary-font : "Poppins", sans-serif;
+$text-color: #616368;
+$title-text: #242f51;
+$red-text: #f55767;
+$green-text: #519e6c;
+$blue-text: #2563ff;
+@mixin dFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin circle ($w, $h) {
+    width: $w;
+    height: $h;
+    border-radius: 50%; 
+}
+@mixin maxWidth($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+@mixin minWidth($value) {
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
+@mixin mimaxW ($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

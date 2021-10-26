@@ -1,0 +1,104 @@
+
+.fade-left{
+  animation: fadeLeft 1s ease forwards;
+  -webkit-animation: fadeLeft 1s ease forwards;
+  visibility: visible;
+}
+.fade-right{
+  animation: fadeRight 1s ease forwards;
+  -webkit-animation: fadeRight 1s ease forwards;
+  visibility: visible;
+}
+.fade-up{
+  animation: fadeUp 1s ease forwards;
+  -webkit-animation: fadeUp 1s ease forwards;
+  visibility: visible;
+}
+.fade-down{
+  animation: fadeDown 1s ease forwards;
+  -webkit-animation: fadeDown 1s ease forwards;
+  visibility: visible;
+}
+.circleLeft{
+  animation: circleLeft 1s ease-in forwards;
+  -webkit-animation: circleLeft 1s ease-in forwards;
+  visibility: visible;
+}
+.circleRight{
+  animation: circleRight 1s ease-in forwards;
+  -webkit-animation: circleRight 1s ease-in forwards;
+  visibility: visible;
+}
+.circleO{
+  animation: circleO 1s ease-in forwards;
+  -webkit-animation: circleO 1s ease-in forwards;
+  visibility: visible;
+}
+@keyframes fadeLeft {
+  from{
+      transform: translateX(-15rem);
+      opacity: 0.2;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;  
+  }
+}
+@keyframes fadeRight {
+  from{
+      transform: translateX(15rem);
+      opacity: 0.2;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;  
+  }
+}
+@keyframes fadeUp {
+  from{
+      transform: translateY(15rem);
+      opacity: 0;
+  }
+  to{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+@keyframes fadeDown {
+  from{
+      transform: translateY(-15rem);
+      opacity: 0;
+  }
+  to{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+@keyframes circleLeft {
+  from{
+      clip-path: circle(0 at 0 50%);
+      opacity: 0.4;
+  }
+  to{
+      clip-path: circle(150% at 0 50%);
+      opacity: 1;
+  }
+}
+@keyframes circleRight {
+  from{
+      clip-path: circle(0 at 100% 50%);
+      opacity: 0.5;
+  }
+  to{
+      clip-path: circle(150% at 100% 50%);
+      opacity: 1;
+  }
+}
+@keyframes circleO {
+  from{
+      clip-path: circle(0 at 50% 50%);
+  }
+  to{
+      clip-path: circle(100% at 50% 50%);
+  }
+}

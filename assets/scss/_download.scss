@@ -1,0 +1,63 @@
+.download{
+    visibility: hidden;
+    position: relative;
+    background: url("../image/footer-bg.png") no-repeat right bottom / contain;
+    &-main{
+        padding-top: 9.8rem;
+        @include dFlex;
+    }
+    &-content{
+        width: 60%;
+        margin-right: auto;
+        padding-left: 1.3rem;
+        .title{
+            font-size: 4.8rem;
+            line-height: 5.8rem;
+            padding-bottom: 2.5rem;
+        }
+        .desc{
+            padding-right: 4rem;
+        }
+        .download-img{
+            padding-top: 5rem;
+            padding-bottom: 10.5rem;
+            @include dFlex;
+            justify-content: unset;
+            padding-left: 1.9rem;
+            a + a {
+                margin-left: 3.2rem;
+            }
+        }
+    }
+    display: block;
+    @include maxWidth(1200px){
+        &-content{
+            .title{
+                backdrop-filter: blur(1.6rem);
+            }
+            .desc{
+                backdrop-filter: blur(1.6rem);
+            }
+        }
+    }
+    @include maxWidth(1023px){
+        &-main{
+            padding-top: 8rem;
+        }
+       
+    }
+    @include maxWidth(767px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-content{
+            width: 100%;
+            .title{
+                font-size: 3.2rem;
+            }
+            .download-img{
+                padding: 2rem 2rem 4rem;
+            }
+        }
+    }
+}

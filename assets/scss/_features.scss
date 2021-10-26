@@ -1,0 +1,120 @@
+.features{
+    &-main {
+        padding-top: 15rem;
+        @include dFlex;
+        align-items: unset;
+    }
+    &-img{
+        visibility: hidden;
+        width: 60%;
+        margin-left: -24rem;
+        position: relative;
+        &-1{
+            transition: opacity .5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            &:nth-child(2){
+                opacity: 0;
+            }
+            &:hover:nth-child(1) {
+                opacity: 0;
+            }
+            &:hover:nth-child(2) {
+                opacity: 1;
+            }
+        }
+    }
+    &-content{  
+        width: 40%;
+        padding-left: 3rem;
+        visibility: hidden;
+    }
+    &-title{
+        .title{
+            max-width: 70%;
+            padding-top: 4rem;
+        }
+        .desc{
+            padding-top: 1.2rem;
+            line-height: 2.6rem;
+        }
+    }
+    &-list{
+        padding-top: 3rem;
+    }
+    &-item{
+        @include dFlex;
+        padding-top: 6rem;
+        .icon{
+            margin-right: 3.2rem;
+            color: #f55767;
+            width: 8.8rem;
+            height: 8.8rem;
+            @include dFlex;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: #f557671a;
+            ion-icon{
+                font-size: 5rem;
+            }
+        }
+        &:nth-child(2) .icon {
+            color: #2563ff;
+            background: #2563ff1a;
+        }
+        &:nth-child(3) .icon {
+            color: #519e6c;
+            background: #519e6c1a;
+        }
+        .content{
+            .title{
+                font-size: 2rem;
+                line-height: 2;
+                font-weight: 600;
+                color: #f55767;
+            }
+            .desc{
+                width: 85%;
+                line-height: 2.6rem;
+            }
+        }
+        &:nth-child(2) .content .title{
+            color:#2563ff;
+        }
+        &:nth-child(3) .content .title{
+            color: #519e6c;
+        }
+    }
+    @include maxWidth(1023px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-img{
+            display: none;
+        }
+        &-content{
+            width: 100%;
+            padding-left: 0;
+        }
+        &-title{
+            text-align: center;
+            .title{
+                max-width: 100%;
+            }
+        }
+        &-item{
+            padding: 4rem 2rem 0;
+            .content .desc {
+                width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px){
+        &-item{
+            padding: 2rem 0;
+        }
+    }
+}

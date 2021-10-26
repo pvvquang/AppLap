@@ -1,0 +1,96 @@
+.smart{
+    &-main{
+        padding-top: 21rem;
+    }
+    &-info{
+        visibility: hidden;
+        @include dFlex;
+    }
+    &-title{
+        .title{
+            font-size: 4rem;
+            line-height: 5rem;
+            color: $title-text;
+            margin-right: 3.2rem;
+            padding: 0 7.4rem 0 5.5rem;
+            border-right: .1rem solid #b9b9b8;
+        }
+    }
+    &-desc{
+        .desc{
+            line-height: 2.6rem;
+            padding-left: 1.5rem;
+            padding-right: 15rem;
+        }
+    }
+    &-list{
+        visibility: hidden;
+        @include dFlex;
+    }
+    &-item{
+        @extend .features-item;
+        padding-top: 11rem;
+        display: block;
+        .content .title{
+            padding-top: 2.6rem;
+        }
+        .content .desc{
+            width: 75%;
+        }
+    }
+    display: block;
+    @include maxWidth(1023px) {
+        &-main{
+            padding-top: 8rem;
+        }
+        &-title{
+            .title{
+                font-size: 2.8rem;
+                margin-right: 2rem;
+                padding: 0 2rem;
+            }
+        }
+        &-list{
+            align-items: stretch;
+        }
+        &-desc{
+            .desc{
+                padding: 0;
+            }
+        }
+        &-item{
+            padding-top: 6rem;
+            text-align: center;
+            min-height: 25rem;
+            .icon{
+                margin: 0 auto;
+            }
+            .content .desc{
+                width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        &-main{
+            padding-top: 4rem;
+        }
+        &-info{
+            flex-direction: column;
+        }
+        &-title .title{
+            margin-right: 0;
+            border-right: unset;
+            margin-bottom: 1.6rem;
+            text-align: center;
+        }
+        &-desc .desc{
+            text-align: center;
+        }
+        &-list{
+            flex-direction: column;
+        }
+        &-item{
+            padding-top: 2rem;
+        }
+    }
+}

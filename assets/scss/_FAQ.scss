@@ -1,0 +1,112 @@
+.FAQ{
+    border-bottom: .2rem solid #f4f4f4;
+    &-main{
+        visibility: hidden;
+        padding-top: 21rem;
+        padding-bottom: 10.8rem;
+    }
+    &-title{
+        @extend .rating-title;
+        text-align: center;
+        max-width: 55%;
+        margin: 0 auto;
+        .title{
+            margin-bottom: 3rem;
+        }
+    }
+    &-list{
+        padding-top: 6.4rem;
+    }
+    &-item{
+        margin-bottom: 1rem;
+        background: #f5f7fa;
+        overflow: hidden;
+        padding-left: 4.8rem;
+        .title{
+            @include dFlex;
+            justify-content: unset;
+        }
+        .collapse{
+            font-size: 3rem;
+            width: 5.8rem;
+            height: 5.8rem;
+            margin: .6rem .8rem;
+            color: $title-text;
+            background: transparent;
+            border: unset;
+            font-weight: 600;
+            @include dFlex;
+            margin-left: auto;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: box-shadow .3s;
+            &:hover{
+                box-shadow: 0 0 1rem rgba(0,0,0,.5);
+            }
+            &.minus{
+                display: none;
+            }
+        }
+        .desc{
+            overflow: hidden;
+            max-height: 0;
+            transition: all .3s linear;
+        }
+        &.active .title{
+            padding-top: 5rem;
+            padding-bottom: 1rem;
+        }
+        &.active .desc{
+            max-height: 80%;
+            padding: 2rem 6rem 6rem 0;
+        }
+        &.active .collapse.plus{
+            display: none;
+        }&.active .collapse.minus{
+            display: flex;
+        }
+    }
+    display: block;
+    @include maxWidth(1023px){
+        &{
+            border-bottom: unset;
+        }
+        &-main{
+            padding-top: 8rem;
+            padding-bottom: 2rem;
+        }
+        &-title{
+            padding-left: 0;
+            max-width: 100%;
+            .title{
+                font-size: 3.2rem;
+            }
+        }
+        &-list{
+            padding-top: 4rem;
+        }
+        &-item {
+            .title{
+                padding: 2rem;
+                font-size: 1.8rem;
+            }
+        }
+        &-item.active .title{
+            padding-top: 3rem;
+        }
+        &-item.active .desc{
+            padding: 2rem;
+        }
+    }
+    @include maxWidth(767px){
+        &-main{
+            padding-top: 6rem;
+        }
+        &-item{
+            padding-left: 0;
+            .title{
+                padding-right: 0;
+            }
+        }
+    }
+}
